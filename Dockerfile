@@ -1,7 +1,9 @@
-FROM centos:latest
-RUN yum update 
-RUN yum install java-11-openjdk -y 
-RUN mkdir /opt/tomcat
+FROM ubuntu:latest
+RUN sudo apt-get update 
+RUN sudo apt install default-jre
+RUN sudo apt install default-jdk
+RUN sudo javac -version
+RUN sudo mkdir /opt/tomcat
 WORKDIR /opt/tomcat
 ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.tar.gz .
 RUN tar -xvfz apache-tomcat-9.0.71.tar.gz
