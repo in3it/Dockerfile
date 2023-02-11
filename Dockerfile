@@ -5,6 +5,7 @@ RUN  apt-get install default-jdk -y
 RUN  javac -version
 RUN  mkdir /opt/tomcat
 WORKDIR /opt/tomcat
+RUN apt-get install wget -y
 RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.tar.gz .
 RUN tar -xvfz apache-tomcat-9.0.71.tar.gz
 RUN mv apache-tomcat-9.0.71/* /opt/tomcat
