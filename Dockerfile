@@ -7,6 +7,7 @@ RUN  mkdir /opt/tomcat
 WORKDIR /opt/tomcat
 RUN apt-get install wget -y
 ADD https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.5/bin/apache-tomcat-10.1.5.tar.gz /opt/tomcat
+WORKDIR /opt/tomcat
 RUN tar -xvfz apache-tomcat-10.1.5.tar.gz
 RUN mv apache-tomcat-10.1.5/* /opt/tomcat
 EXPOSE 8080
